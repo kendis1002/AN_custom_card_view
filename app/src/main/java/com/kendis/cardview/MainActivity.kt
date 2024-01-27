@@ -153,10 +153,11 @@ private fun CryptoCardContent(
     data: CryptoCardData,
     modifier: Modifier = Modifier,
     textColor: Color = MaterialTheme.colorScheme.onSurface,
+    cardSize: Dp = 150.dp
 ) {
     Column(
         verticalArrangement = Arrangement.SpaceBetween,
-        modifier = modifier.size(150.dp)
+        modifier = modifier.size(cardSize)
     ) {
         Row(
             modifier = Modifier
@@ -214,11 +215,12 @@ fun CryptoCard(
         value = 3.689087f,
         valueChange = -18,
         currentTotal = 98160
-    )
+    ),
+    cardSize: Dp = 150.dp
 ) {
     Box(modifier = modifier) {
-        CryptoCardBackground()
-        CryptoCardContent(data = data)
+        CryptoCardBackground(cardSize = cardSize)
+        CryptoCardContent(data = data, cardSize = cardSize)
     }
 }
 
